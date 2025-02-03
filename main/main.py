@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 import tkinter as tk
+from textos import guia as texto_guia
 
 def update_history(equation, history_listbox):
     """Añade una ecuación al historial."""
@@ -75,8 +76,7 @@ def get_equation(root, history_listbox, canvas_frame, canvas_widget):
         # Crear un campo de texto donde puedes escribir la descripción
         help_text = tk.Text(help_window, wrap=tk.WORD, width=50, height=10)
         help_text.pack(padx=10, pady=10)
-        help_text.insert(tk.END, "Aquí va la guía o descripción sobre cómo ingresar ecuaciones. "
-                                "Ejemplo: Ingrese 'x**2' para graficar f(x) = x^2.")
+        help_text.insert(tk.END, texto_guia)
         help_text.config(state=tk.DISABLED)  # Deshabilitar la edición para que solo se vea el texto
 
     help_button = tk.Button(root, text="Ayuda", command=show_help)
