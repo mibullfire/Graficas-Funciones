@@ -109,4 +109,11 @@ def main():
 
     root.mainloop()
 
+    def on_closing():
+        root.quit()   # Detiene el loop de Tkinter
+        root.destroy()  # Cierra la ventana
+        exit(0)  # Asegura que el proceso termina completamente
+
+    root.protocol("WM_DELETE_WINDOW", on_closing)
+
 main()
